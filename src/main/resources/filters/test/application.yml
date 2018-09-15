@@ -1,0 +1,55 @@
+spring:
+    resources:
+        static-locations: classpath:/
+    aop:
+        auto: true
+    http:
+        multipart:
+            max-file-size: 100Mb
+            max-request-size: 100MB
+    profiles:
+            active: test
+server:
+    port: 80
+yunhetong:
+    https-ip: false
+    domain-name: https://testapi.yunhetong.com
+    interfaces:
+    #token
+      auth: /api/auth/login
+
+      #用户
+      createPersonUser: /api/user/person
+      createCompanyUser: /api/user/company
+      updatePersonUser: /api/user/personNameAndPhone
+      updateCompanyUser: /api/user/companyNameAndPhone
+      queryUserSignerId: /api/user/signerId/certifyNums
+      queryUserInfo: /api/user/userInfo/signerIds
+      #证书
+      queryCertificate: /api/user/certInfo/
+      #上传摘要
+      uploadSignSummary: /api/contract/summary
+
+      #印模
+      personMoulage: /api/user/personMoulage
+      companyMoulage: /api/user/companyMoulage
+      uploadMoulage: /api/user/uploadMoulage
+      queryMoulage: /api/user/summary/moulage/
+      #短信
+      sendVerifyCode: /api/contract/sms/sendVerificationCode/
+      validateVerifyCode: /api/contract/sms/verificationCode/
+
+      #存证
+      queryCzId: /api/notarization/queryCzId
+      cz: /api/notarization/cz
+      uploadTsaSignSummary: /api/contract/timeStampSign
+
+    #时间戳
+    tsa-client-url:
+      szca: http://120.76.22.235:8081/api/rfc3161
+      wt: http://timestamp.wosign.com/timestamp
+#CA类型
+caType: B2
+file:
+  #合同文件最大限制20M
+  contractMaxFileSize: 20971520

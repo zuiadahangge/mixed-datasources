@@ -1,0 +1,24 @@
+spring:
+    resources:
+        static-locations: classpath:/
+    jpa:
+        show-sql: true
+    aop:
+        auto: true
+
+mybatis:
+  typeAliasesPackage: com.zh.entity
+  mapperLocations: classpath:mapper/*.xml
+server:
+    port: 83
+#logging:
+#    config: classpath:logback/logback-spring.xml
+
+druid:
+    initial-size: 1
+    min-idle: 5
+    max-active: 300
+    test-on-borrow: true
+    url: jdbc:h2:C:/LX/data/zh_test
+    username: root
+    password: root
